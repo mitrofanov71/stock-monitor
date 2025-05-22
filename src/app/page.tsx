@@ -1,3 +1,5 @@
-export default function TEST() {
-    return (<div>test</div>)
-}
+import HomePage from '@/components/HomePage';
+
+export default () => {
+  return <HomePage />;
+};
