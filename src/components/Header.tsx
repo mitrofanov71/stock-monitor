@@ -1,14 +1,14 @@
 import React, { ChangeEvent } from 'react';
 import { FiltersType } from '@/types/common';
 
-interface Props {
+interface IProps {
   search: string;
   onSearch: (value: string) => void;
   filter: FiltersType;
   onSetFilter: (FiltersType) => void;
 }
 
-const Header = ({ search, onSearch, filter, onSetFilter }: Props) => {
+const Header = ({ search, onSearch, filter, onSetFilter }: IProps) => {
   const handleSearchChange = (e: ChangeEvent) => {
     onSearch(e.target.value);
   };

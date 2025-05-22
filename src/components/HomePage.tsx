@@ -54,7 +54,7 @@ export default function HomePage() {
 
   const filtered = useMemo(() => {
     return stocks.filter((stock) => {
-      const match = stock.symbol.toLowerCase().includes(search.toLowerCase());
+      const match = stock.symbol?.toLowerCase().includes(search.toLowerCase());
       if (filter === 'up') return match && stock.price > stock.open;
       if (filter === 'down') return match && stock.price < stock.open;
       return match;
@@ -74,7 +74,7 @@ export default function HomePage() {
       {isLoading ? (
         <Loader />
       ) : filtered.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 items-start">
           {filtered.map((stock) => (
             <StockCard key={stock.symbol} stock={stock} />
           ))}
